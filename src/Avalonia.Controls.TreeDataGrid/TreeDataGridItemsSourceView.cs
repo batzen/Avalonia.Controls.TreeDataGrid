@@ -40,7 +40,7 @@ namespace Avalonia.Controls
                 TreeDataGridItemsSourceView => throw new ArgumentException("Cannot wrap an existing ItemsSourceView.", nameof(source)),
                 IList list => list,
                 INotifyCollectionChanged => throw new ArgumentException(
-                    "Collection implements INotifyCollectionChanged by not IList.",
+                    "Collection implements INotifyCollectionChanged but not IList.",
                     nameof(source)),
                 IEnumerable<object> iObj => new List<object>(iObj),
                 _ => new List<object>(source.Cast<object>())
